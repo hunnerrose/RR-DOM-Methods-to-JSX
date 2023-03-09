@@ -1,10 +1,32 @@
-let koalaContainer = document.createElement('div')
+// let koalaContainer = document.createElement('div')
+// let koalaContainer = <div></div>
 
-koalaContainer.setAttribute('class', 'ui items')
+// koalaContainer.setAttribute('class', 'ui items')
+let koalaContainer = (
+    <div className="ui items">
+        {koalas.map(koala => (
+            <div className="item" style={{cursor: 'pointer'}}>
+                <div className="image">
+                    <img src={koala.imageURL}/>
+                </div>
+                <div className="content">
+                    <div className="header">
+                        {koala.name}
+                    </div>
+                    <div className="description">
+                        <p>{koala.description}</p>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+)
 
 // Koala Card
 // koalas are in './public/koalas.js'
-koalas.forEach(koala => {
+
+
+/* koalas.forEach(koala => {
     let koalaCard = document.createElement('div')
     koalaCard.setAttribute('class', 'item')
     koalaCard.style.cursor = 'pointer';
@@ -46,5 +68,6 @@ koalas.forEach(koala => {
 
     koalaContainer.append(koalaCard)
 })
+ */
 
 document.body.append(koalaContainer)
